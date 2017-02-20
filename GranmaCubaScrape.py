@@ -60,7 +60,7 @@ class Granma(object):
                 print("Error. Start date must be less than end date.")
                 pass
 
-        fileOutName = input("Enter file out name. Please omit \".txt\" (ex: tno2016.txt):")
+        fileOutName = input("Enter file out name. Please omit \".txt\" (ex: gcs2016.txt):")
         self.__fileOut = open(directory + fileOutName + ".txt", "a")
         self.__fileOut2 = open(directory + fileOutName + "_utf-8.txt", "a")
         self.__pageCounter = 0
@@ -127,7 +127,7 @@ class Granma(object):
                 print("Error in getting sublinks")
                 print(e)
         print("Sublinks:", linksList)
-        print("Loading sublinks done", end="\n")
+        print("Loading sublinks done", end="\n\n")
         time.sleep(random.uniform(5, 10))
         return linksList
 
@@ -176,10 +176,9 @@ class Granma(object):
         return self.__startDate
 
 
-# Need to make inputs their own functions for error checking
+# Main loop
 def main():
 
-    # Main loop
     gcs = Granma()
     startdate = gcs.getStartDate()
     enddate = gcs.getEndDate()
