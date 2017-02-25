@@ -5,8 +5,6 @@
 # Prints all sections (including potentially unrelated sections such as sports)
 # Use ISO-8859-1 Encoder to read the txt files
 
-# The Nigerian Observer uses years and months, rather than years, months, and days like the New York Times
-
 # from __future__ import division # this lets you divide numbers and get floating results
 import math  # this lets you do math
 import re  # this lets you make string replacements: 'hi there'.replace(' there') --> 'hi'
