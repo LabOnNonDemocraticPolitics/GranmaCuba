@@ -52,7 +52,7 @@ class Granma(object):
         fileOutName = input("Enter file out name. Please omit \".txt\" (ex: gcs2016.txt):")
         self.__fileOut = io.open(directory + fileOutName + ".txt", "a", encoding="utf-8")
         self.__pageCounter = 0
-        queryInput = input("Insert search term (if none, press enter:")
+        queryInput = input("Insert search term (if none, press enter):")
         self.__query = queryInput.strip()
         self.__driver = webdriver.Firefox()
 
@@ -178,7 +178,7 @@ def main():
     n = 1
 
     while n <= numResultsPages: # An inequality can be used here to determine number of results and number of results pages
-        print('\n#################################### Page ' + str(n) + " ####################################\n")
+        print("\n#################################### Page " + str(n) + " ####################################\n")
         try:
             linksList = gcs.getSubLinks()
         except Exception as e:  # need exceptions to be more specific
