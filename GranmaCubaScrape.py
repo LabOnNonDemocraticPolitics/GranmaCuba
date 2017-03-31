@@ -1,5 +1,5 @@
 # Theodore Chu
-# March 4, 2017
+# March 30, 2017
 # For the USC Lab on Non-Democratic Politics under the direction of Erin Baggott Carter and Brett Logan Carter
 # Scrapes the Granma (Cuba)
 # Prints all sections
@@ -52,8 +52,7 @@ class Granma(object):
         fileOutName = input("Enter file out name. Please omit \".txt\" (ex: gcs2016.txt):")
         self.__fileOut = io.open(directory + fileOutName + ".txt", "a", encoding="utf-8")
         self.__pageCounter = 0
-        queryInput = input("Insert search term (if none, press enter):")
-        self.__query = queryInput.strip()
+        self.__query = ""
         self.__driver = webdriver.Firefox()
 
     def getDate(self):
