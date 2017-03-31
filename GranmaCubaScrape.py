@@ -122,7 +122,14 @@ class Granma(object):
                 print(url)
                 time.sleep(random.uniform(1, 10))
 
+
                 # Print title
+                title = self.__driver.find_element_by_class_name("g-story-heading")
+                titleText = title.text
+                print(titleText)
+                print(titleText, file=self.__fileOut)
+
+                # Print subtitle
                 title = self.__driver.find_element_by_class_name("g-story-description")
                 titleText = title.text
                 print(titleText)
@@ -133,6 +140,27 @@ class Granma(object):
                 dateText = date.text
                 print(dateText)
                 print(dateText, file=self.__fileOut)
+
+                try:
+                    photocaption = self.__driver.find_element_by_class_name("caption-text")
+                    photocaptionText = photocaption.text
+                    print("##### Photo Caption 1 #####") # Indicates which photo is in the article page
+                    print(photocaptionText)
+                    print(photocaptionText, file=self.__fileOut)
+                except Exception:
+                    try:
+                        photocaption2 = self.__driver.find_element_by_class_name(
+                            "g-story-body-photo.g-story-body-full.related-image")# Indicates which photo is in the article page
+                        photocaptionText2 = photocaption2.text
+                        print("##### Photo Caption 2 #####")
+                        print(photocaptionText2)
+                        print(photocaptionText2, file=self.__fileOut)
+                    except Exception:
+                        pass
+
+
+
+
 
                 # Print the story in the article
                 content = self.__driver.find_element_by_class_name("story-body-text.story-content")
